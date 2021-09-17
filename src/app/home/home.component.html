@@ -1,0 +1,20 @@
+<h2>Karoline Teodoro da Silva</h2>
+<p>RA: 0050831921012 </p>
+<br>
+<a href="https://github.com/kateodoros"> Meu perfil no Github</a>
+
+
+
+<h3>Horários</h3>
+<table>
+  <tr>
+    <th>Dia da semana</th>
+    <th>Horário</th>
+    <th>Disciplina</th>
+  </tr>
+  <tr *ngFor="let item of horariosService.getList()">
+    <td>{{item.diasemana}}</td>
+    <td>{{item.hora}}</td>
+    <td>{{item.nome}}</td>
+  </tr>
+</table>

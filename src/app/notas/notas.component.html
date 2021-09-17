@@ -1,0 +1,34 @@
+<section>
+  <h2>Notas</h2>
+  <table>
+    <tr>
+      <th>Disciplina</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>Média</th>
+    </tr>
+    <tr *ngFor="let item of horariosService.getList()">
+      <td>{{item.nome}}</td>
+      <td>{{item.p1}}</td>
+      <td>{{item.p2}}</td>
+      <td>{{(+item.p1 + +item.p2) / 2}}</td>
+    </tr>
+  </table>
+  <div class="tabela">
+    <label>
+      Selecione uma disciplina:
+      <select [(ngModel)]="id">
+      <option *ngFor="let item of horariosService.getList()" value={{item.id}}>{{item.nome}}</option>
+    </select>
+    </label>
+    <br><label>
+    P1:
+    <input type="number" [(ngModel)]="p1" required min="0" max="10">
+  </label>
+    <label>
+    P2:
+    <input type="number" [(ngModel)]="p2" required min="0" max="10">
+  </label>
+    <input type="submit" value="Adicionar" (click)="handleClick()">
+  </div>
+</section>
